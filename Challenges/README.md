@@ -5,3 +5,5 @@
 3. [transactionsStability](https://codefights.com/challenge/4zHwcCPhEbn4Reu95/solutions/N4iwqTGE9wxbK8j89)
 4. [Caesar Cipher_privateEyesOnly](https://codefights.com/challenge/ZmwS44X2LZLePZNQj/solutions)
 5. [secretArchivesLock](https://codefights.com/challenge/tuX9NefHfwnPBFZoW)
+6. []()
+7. [iterMask](https://codefights.com/challenge/HNWBnYKNdfmk5cLJN)
