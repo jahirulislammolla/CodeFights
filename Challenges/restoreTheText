@@ -1,0 +1,10 @@
+import os
+x={}
+y=""
+for r, d, c in os.walk('/root/devops/'):
+    for f in c:
+        p=r+"/"+f
+        x[os.stat(p)[8]]=open(p).read()
+for i in sorted(x):
+    y+=x[i]
+print y
