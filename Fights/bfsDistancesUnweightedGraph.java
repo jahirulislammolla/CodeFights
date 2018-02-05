@@ -1,27 +1,26 @@
-int bfsDistancesUnweightedGraph2(std::vector<std::vector<bool>> matrix, int vertex1, int vertex2) {
+int bfsDistancesUnweightedGraph2(boolean[][] matrix, int vertex1, int vertex2) {
 
-  bool visited[matrix.size()];
-  std::fill_n(visited, matrix.size(), false);
-  std::queue<int> q;
-  std::vector<int> distance(matrix.size());
+  boolean[] visited = new boolean[matrix.length];
+  LinkedList<Integer> queue = new LinkedList<>();
+  int[] distance = new int[matrix.length];
 
-  visited[vertex1] = true;
-  q.push(vertex1);
-  while (q.size() > 0) {
-    int currentVertex = q.front();
-    q.pop();
+  visited[vertex1] =  true ;
+  queue.add(vertex1);
+  while (queue.size() > 0) {
+    int currentVertex = queue.pop();
     visited[currentVertex] = true;
-    for (int nextVertex = 0; nextVertex < matrix.size(); ++nextVertex) {
+    for (int nextVertex = 0; nextVertex < matrix.length; nextVertex++) {
       if (matrix[currentVertex][nextVertex] && !visited[nextVertex]) {
         visited[nextVertex] = true;
         distance[nextVertex] = distance[currentVertex] + 1;
-        q.push(nextVertex);
+        queue.add(nextVertex);
       }
     }
   }
 
   return distance[vertex2];
 }
+
     private static int[] bfsDistancesUnweightedGraph(boolean[][] matrix, int startVertex) {
         int[] distances = new int[matrix.length];
         Queue<Integer> queue = new LinkedList<>();
