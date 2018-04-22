@@ -1,11 +1,16 @@
 def equalPairOfBits(n, m):
-    r=1
-    c=0
-    while n and m:
-        if n%2==m%2:
-            return 2**c
-        c+=1
-        n//=2
-        m//=2
-    return r
-    #return n + m + 1 & ~m - n
+    i = 1
+    while (n & 1) != (m & 1):
+        n >>= 1
+        m >>= 1
+        i <<= 1
+    return i
+#...........
+def equalPairOfBits(n, m):
+    x = bin(n)[2:][::-1]
+    y = bin(m)[2:][::-1]
+
+    for i in range(min(len(x), len(y))):
+        if x[i] ==  y[i]:
+            return 2 ** i
+    return 2 ** (i+1)
