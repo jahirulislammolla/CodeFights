@@ -3,5 +3,5 @@ def leastCommonPrimeDivisor(a, b):
     c=-1
     for i in x:
         if a%i==b%i==0:
-            return c
+            return i
     return c
