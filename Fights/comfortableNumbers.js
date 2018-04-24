@@ -1,0 +1,29 @@
+function comfortableNumbers(l, r) {
+   s=0,p=0;
+   for(i=l;i<r;i++)
+      {
+         x=i.toString().split("");
+         s=0;
+         for(j=0;j<x.length;j++)
+            {
+               s+=parseInt(x[j]);
+            }
+         for(k=i+1;k<=i+s;k++)
+            {
+               if(k<=r)
+                  {
+                     x=k.toString().split("");
+                     t=0;
+                     for(j=0;j<x.length;j++)
+                        {
+                           t+=parseInt(x[j]);
+                        }
+                     if(i>=k-t)
+                        p++;
+                  }
+               else
+                  break;
+            }  
+      }
+    return p;
+}
