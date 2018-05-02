@@ -1,11 +1,7 @@
-def caseUnification(inputString):
-
-    changesToMakeUppercase = len(re.findall('[a-z]', inputString))
-    changesToMakeLowercase = len(re.findall('[A-Z]', inputString))
-
-    if (changesToMakeUppercase == 0
-        or changesToMakeLowercase != 0
-        and changesToMakeUppercase < changesToMakeLowercase):
-        return inputString.upper()
+def caseUnification(S):
+    cu = len(re.findall('[a-z]', S))
+    cl = len(re.findall('[A-Z]', S))
+    if (cu == 0 or cl != 0 and cu < cl):
+        return S.upper()
     else:
-        return inputString.lower()
+        return S.lower()
