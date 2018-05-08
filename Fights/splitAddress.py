@@ -10,3 +10,12 @@ def splitAddress(address):
         context=result[1][1:].split("/")
         return [protocol, domain, *context]
     return [protocol, domain]
+#another solution.....
+import re
+from operator import is_not
+from functools import partial
+ 
+def splitAddress(address):
+    pat = re.compile("(\w+)://(\w+).com(?:/(\w+))?")
+    m = pat.match(address)
+    return filter(partial(is_not, None), m.groups())
