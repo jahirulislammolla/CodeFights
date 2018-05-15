@@ -21,6 +21,30 @@ int bfsDistancesUnweightedGraph2(boolean[][] matrix, int vertex1, int vertex2) {
   return distance[vertex2];
 }
 
+int[] bfsDistancesUnweightedGraph(boolean[][] matrix, int startVertex) {
+     boolean[] visited = new boolean[matrix.length];
+		  LinkedList<Integer> queue = new LinkedList<>();
+		  int[] distance = new int[matrix.length];
+
+		  visited[startVertex] = true;
+		  queue.add(startVertex);
+		  while (queue.size() != 0) {
+		    int currentVertex = queue.pop();
+		    visited[currentVertex] = true;
+		    for (int nextVertex = 0; nextVertex < matrix.length; nextVertex++) {
+		      if (matrix[currentVertex][nextVertex] && !visited[nextVertex]) {
+		        visited[nextVertex] = true;
+		        distance[nextVertex] = distance[currentVertex] + 1;
+		        queue.add(nextVertex);
+		      }
+		    }
+		  }
+
+		  return distance;
+
+}
+
+
     private static int[] bfsDistancesUnweightedGraph(boolean[][] matrix, int startVertex) {
         int[] distances = new int[matrix.length];
         Queue<Integer> queue = new LinkedList<>();
