@@ -6,6 +6,6 @@ def reduceString(s):
             a+=1
             b-=1
         else:
-            b
+            b+=1
             break
     return s[a:b]
