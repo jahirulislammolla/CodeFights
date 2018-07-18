@@ -8,3 +8,4 @@
 6. [matrixCheck](https://codefights.com/challenge/yn3hP6BfMLgbXxbEq/solutions/eSRwgXoZbKkuHrZWh)
 7. [iterMask](https://codefights.com/challenge/HNWBnYKNdfmk5cLJN)
 8. [drawsAndWins](https://codefights.com/challenge/zSXsbCaNp6vsqaob5)
+9. [guessIt](https://app.codesignal.com/challenge/vCcqqvqBYM8k2dHhE)
