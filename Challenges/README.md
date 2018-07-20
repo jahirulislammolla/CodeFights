@@ -9,4 +9,4 @@
 7. [iterMask](https://codefights.com/challenge/HNWBnYKNdfmk5cLJN)
 8. [drawsAndWins](https://codefights.com/challenge/zSXsbCaNp6vsqaob5)
 9. [guessIt](https://app.codesignal.com/challenge/vCcqqvqBYM8k2dHhE)
-10.[brothersInTheBar](https://app.codesignal.com/challenge/dHjGPiEYFFcrwKMip)
+10. [brothersInTheBar](https://app.codesignal.com/challenge/dHjGPiEYFFcrwKMip)
