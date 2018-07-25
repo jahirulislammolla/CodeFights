@@ -1,0 +1,7 @@
+CREATE PROCEDURE gradeDistribution()
+BEGIN
+	/*select Name , ID from Grades where Midterm1+Midterm2 < Final*2 order by left(Name,3);
+    select Name, ID from Grades where final > midterm1*0.25 + midterm2*0.25 +0.5*final OR final > midterm1*0.5 + midterm2*0.5 order by left(name, 3);
+*/
+    select Name, ID from Grades where (Midterm1*25/100 + midterm2*25/100)< Final*50/100 order by left(Name,3);
+END
