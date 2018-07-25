@@ -1,0 +1,3 @@
+CREATE PROCEDURE automaticNotifications()
+    SELECT email FROM users WHERE role not in ("admin", "premium") ORDER BY email;
+    /*SELECT email FROM users WHERE not role in ("admin", "premium") ORDER BY email;*/
