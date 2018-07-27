@@ -1,0 +1,5 @@
+CREATE PROCEDURE movieDirectors()
+BEGIN
+	/*select distinct director from (select director, sum(oscars) cou from moviesInfo where year>2000 group by director) c where cou>2;*/
+    select distinct director from moviesInfo where year>2000 group by director having sum(oscars)>2;
+END
