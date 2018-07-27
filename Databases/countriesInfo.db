@@ -1,0 +1,4 @@
+CREATE PROCEDURE countriesInfo()
+BEGIN
+	select count(name) number, avg(population) average, sum(population) total from countries;
+END
