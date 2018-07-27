@@ -1,0 +1,5 @@
+CREATE PROCEDURE itemCounts()
+BEGIN
+		/*select distinct c.item_name, c.item_type,(select count(*) from availableItems where c.item_name=item_name and c.item_type=item_type) item_count from availableItems c order by 2, 1 asc;*/
+  select item_name, item_type, count(*) item_count from availableItems group by item_name, item_type order by item_type, item_name;pe) item_count from availableItems c order by 2, 1 asc;
+END
