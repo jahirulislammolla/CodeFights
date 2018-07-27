@@ -10,3 +10,4 @@
 8. [drawsAndWins](https://codefights.com/challenge/zSXsbCaNp6vsqaob5)
 9. [guessIt](https://app.codesignal.com/challenge/vCcqqvqBYM8k2dHhE)
 10. [brothersInTheBar](https://app.codesignal.com/challenge/dHjGPiEYFFcrwKMip)
+11. [notTheBestFan_api](https://app.codesignal.com/challenge/ohAu35T4j2mfvwoxk)
