@@ -1,0 +1,4 @@
+CREATE PROCEDURE expressionsVerification()
+BEGIN
+	select id, `a`, b, operation,c from expressions where c=if(operation='+',`a`+b,if(operation='-',`a`-b,if(operation='*',`a`*b,`a`/b)));
+END
