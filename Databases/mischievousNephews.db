@@ -1,0 +1,13 @@
+CREATE PROCEDURE mischievousNephews()
+BEGIN
+select weekday(mischief_date) weekday, mischief_date, author, title  from mischief order by weekday,field(author,"Huey","Dewey","Louie"),mischief_date,title ASC ;
+/*select (case DAYNAME(mischief_date) when "Monday" then 0 
+       when "Tuesday" then 1
+       when "Wednesday" then 2
+       when "Thursday" then 3
+       when "Friday" then 4
+       when "Saturday" then 5
+       when "Sunday" then 6
+       end) as weekday, mischief_date,author,title from mischief order by weekday,(case author 
+         when "Huey" then 1 when "dewey" then 2 when "Louie" then 3 end),mischief_date, title asc;*/
+END
