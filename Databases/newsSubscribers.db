@@ -1,0 +1,4 @@
+CREATE PROCEDURE newsSubscribers()
+BEGIN
+	select distinct g.subscriber from (select subscriber from full_year where newspaper like '%Daily%' union all select subscriber from half_year where newspaper like '%Daily%') g order by 1 asc;
+END
