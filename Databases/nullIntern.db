@@ -1,0 +1,4 @@
+CREATE PROCEDURE nullIntern()
+BEGIN
+	select count(*) number_of_nulls from departments where description is null or trim(description) in ('null','nil','-');
+END
