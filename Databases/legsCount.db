@@ -1,0 +1,13 @@
+
+DROP PROCEDURE IF EXISTS legsCount;
+CREATE PROCEDURE legsCount()
+    SELECT distinct (select sum(m) from (select if(type='human',count(*)*2,count(*)*4) m from creatures group by type) g) as summary_legs
+    FROM creatures
+    ORDER BY id;
+
+....................................................
+DROP PROCEDURE IF EXISTS legsCount;
+CREATE PROCEDURE legsCount()
+    SELECT sum(if(type='human',2,4)) as summary_legs
+    FROM creatures
+    ORDER BY id;
