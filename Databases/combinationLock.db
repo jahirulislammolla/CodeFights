@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE combinationLock()
+BEGIN
+	select round(Exp(sum(log(length(characters)))),0) combinations from discs;
+END
