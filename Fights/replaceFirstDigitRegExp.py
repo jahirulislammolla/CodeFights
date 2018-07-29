@@ -8,3 +8,6 @@ def replaceFirstDigitRegExp(input):
         else:
             s+=i
     return s
+
+def replaceFirstDigitRegExp(inputString):
+    return re.sub('[0-9]', '#', inputString,1)
