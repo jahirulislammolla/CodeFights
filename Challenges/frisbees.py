@@ -14,9 +14,6 @@ def frisbees(friends, numberOfPasses, startingPlayer):
     c=0
     z=sorted(x)
     for i,j,k in friends:
-        lo_t=9999999
-        ma_d=0
-        lo_i=len(friends)
         for p in z:
             if i-k<=p<=i+k:
                 for m,o in sorted(x[p]):
@@ -25,13 +22,9 @@ def frisbees(friends, numberOfPasses, startingPlayer):
                         if d<=k*k:
                             a[c][0]+=[o]
                             a[c][1]+=[d]
-                    elif m<=j+k:
-                        continue
-                    else:
+                    elif m>j+k:
                         break
-            elif p<=i+k:
-                continue
-            else:
+            elif p>i+k:
                 break
         c+=1
     i=0
