@@ -13,3 +13,4 @@
 11. [notTheBestFan_api](https://app.codesignal.com/challenge/ohAu35T4j2mfvwoxk)
 12. [IsaacRule](https://app.codesignal.com/challenge/aCvD2B4rqZvziDZuy)
 13. [selectionProcess_shall](https://app.codesignal.com/challenge/uf5m9HooxrJQoYZMn)
+14. [frisbees](https://app.codesignal.com/challenge/QMz3QA6eedRtf4Fds/solutions)
