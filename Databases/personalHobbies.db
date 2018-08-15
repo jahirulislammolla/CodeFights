@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE personalHobbies()
+BEGIN
+    select name from people_hobbies where hobbies & 1 and hobbies & 2;
+END
