@@ -14,3 +14,6 @@
 12. [IsaacRule](https://app.codesignal.com/challenge/aCvD2B4rqZvziDZuy)
 13. [selectionProcess_shall](https://app.codesignal.com/challenge/uf5m9HooxrJQoYZMn)
 14. [frisbees](https://app.codesignal.com/challenge/QMz3QA6eedRtf4Fds/solutions)
+15. [combinationCount](https://app.codesignal.com/challenge/9nhvJeSsEa9PKcHXc/solutions/gDv37kEy2Yuz6BBKs)
+16. [reverseOddCount](https://app.codesignal.com/challenge/NZLcmPoRjWAMfCbx2/solutions/eMbY3RNDvy9WqLqyg)
+17. [gradesReport](https://app.codesignal.com/challenge/ECxw2gmfYWtdjLL33/solutions/8TvC9DYzkdPcrCDNz)
