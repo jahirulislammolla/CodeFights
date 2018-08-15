@@ -1,0 +1,10 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE gradesReport()
+BEGIN
+	(select name, grade, mark from (select name, (select grade from 
+  grades where students.mark>=min_mark and students.mark<=max_mark) grade,
+  mark from students order by 2,1) m where grade<"D" ) union all 
+  (select if (grade>"C",null,null) name, grade, mark 
+  from (select name, (select grade from grades where students.mark>=min_mark and students.mark<=max_mark) 
+  grade, mark from students order by 2,3) m where grade>"C");
+END
