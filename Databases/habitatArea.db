@@ -1,0 +1,4 @@
+CREATE PROCEDURE habitatArea()
+BEGIN
+	select ST_AREA(ST_ConvexHull(ST_GeomFromText(concat('MULTIPOINT(', k , ')')))) area from (select  group_concat(CONCAT(x, ' ', y)) k from places) as m;
+END
