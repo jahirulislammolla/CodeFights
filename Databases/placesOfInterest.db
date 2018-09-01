@@ -1,0 +1,9 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE placesOfInterest()
+BEGIN
+	select distinct n.country, (select ifnull(sum(number_of_places),0) from countryActivities where country=n.country and leisure_activity_type='Adventure park') adventure_park, 
+  (select coalesce(sum(number_of_places),0)  from countryActivities where country=n.country and leisure_activity_type='Golf') golf, 
+  (select ifnull(sum(number_of_places),0) from countryActivities where country=n.country and leisure_activity_type='River cruise') river_cruise,
+  (select coalesce(sum(number_of_places),0) from countryActivities where country=n.country and leisure_activity_type='Kart racing') kart_racing 
+  from countryActivities n order by 1;
+END
