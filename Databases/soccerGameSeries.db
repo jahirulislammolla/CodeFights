@@ -1,0 +1,7 @@
+CREATE PROCEDURE soccerGameSeries()
+BEGIN
+	select if(`a`=b,if(c=d,if(e=f,0,if(e>f,1,2)),if(c>d,1,2)),if(`a`>b,1,2)) winner from 
+  (select ifnull(sum(first_team_score > second_team_score),0) `a`, ifnull(sum(first_team_score < second_team_score),0) b,
+  ifnull(sum(first_team_score),0) c,ifnull(sum(second_team_score),0) d,
+  ifnull(sum(if(match_host=2, first_team_score,0)),0) e,ifnull(sum(if(match_host=1,second_team_score,0)),0) f from scores) m;
+END
