@@ -1,0 +1,6 @@
+CREATE PROCEDURE correctIPs()
+BEGIN
+	select * from (SELECT id, if(IS_IPV4(ip)=1,if(CONVERT(SUBSTRING_INDEX(ip, '.', -1) ,UNSIGNED INTEGER)>9 or CONVERT(SUBSTRING_INDEX(ip, '.', -2), UNSIGNED INTEGER)>9, ip, null),null) ip from ips) m where ip is not null order by 1;
+
+ select * from ips where is_ipv4(ip) and (SUBSTRING_INDEX(ip, '.', -1)>9 or (SUBSTRING_INDEX(ip, '.', -2))>9) order by 1;
+END
