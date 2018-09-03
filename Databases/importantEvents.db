@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE importantEvents()
+BEGIN
+	select id, name, event_date, participants from (select id, name, event_date, participants, if(DAYOFWEEK(event_date)=1,8,DAYOFWEEK(event_date)) week from events) m order by week asc, participants desc;
+END
