@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE validPhoneNumbers()
+BEGIN
+	SELECT * from phone_numbers WHERE phone_number REGEXP '^((1-)|\\(1\\))[0-9]{3}-[0-9]{3}-[0-9]{4}$' order by 2;
+END
