@@ -1,0 +1,6 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE pastEvents()
+BEGIN
+set @x = (select max(event_date) from Events);
+select name, event_date from Events where DATEDIFF(@x,event_date) < 8 and DATEDIFF(@x,event_date) > 0 order by event_date desc;
+END
