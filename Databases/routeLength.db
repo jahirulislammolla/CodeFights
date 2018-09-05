@@ -1,0 +1,14 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE routeLength()
+BEGIN
+    set @a=1;
+	set @m=(select max(id) from cities);
+    set @v=0;
+    while @a < @m do
+        set @point1=(select Point(x,y) from cities where id=@a);
+        set @point2=(select Point(x,y) from cities where id=@a+1);
+        set @v= @v + st_distance(@point1,@point2);
+        set @a=@a+1;
+    end while;
+    select round(@v,9) total;
+END
