@@ -1,0 +1,5 @@
+CREATE PROCEDURE companyEmployees()
+BEGIN
+	
+SELECT * FROM departments JOIN employees order by 1,2;
+END
