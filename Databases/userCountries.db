@@ -1,0 +1,4 @@
+CREATE PROCEDURE userCountries()
+BEGIN
+	select id, if(country is null,'unknown',country) country from users left join cities on users.city=cities.city order by 1;
+END
