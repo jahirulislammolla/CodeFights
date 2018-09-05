@@ -1,0 +1,4 @@
+CREATE PROCEDURE scholarshipsDistribution()
+BEGIN
+	select candidate_id as student_id from candidates where candidate_id not in (select candidate_id from candidates inner join detentions on candidate_id = student_id);
+END
