@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE localCalendar()
+BEGIN
+	select event_id,if(hours=12,date_format(addtime(date, sec_to_time(timeshift*60)),'%Y-%m-%d %h:%i %p'),date_format(addtime(date, sec_to_time(timeshift*60)),'%Y-%m-%d %H:%i')) formatted_date from events left join settings on events.user_id=settings.user_id order by 1;
+END
