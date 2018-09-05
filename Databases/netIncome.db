@@ -1,0 +1,4 @@
+CREATE PROCEDURE netIncome()
+BEGIN
+	select year, quarter, sum(profit)-sum(loss) net_profit from (select YEAR(date) year, QUARTER(date) quarter, loss, profit from accounting) m group by year,quarter order by 1,2;
+END
