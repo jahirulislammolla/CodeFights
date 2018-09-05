@@ -1,0 +1,11 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE alarmClocks()
+BEGIN
+    set @a= (select input_date from userInput);
+    set @b= (select input_date from userInput);
+    while YEAR(adddate(@a,7))=YEAR(@b) DO
+        set @a=adddate(@a,7);
+        insert into userInput (input_date) value(@a);
+    end while;
+    select input_date as alarm_date from userInput;
+END
