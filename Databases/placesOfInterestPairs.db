@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE placesOfInterestPairs()
+BEGIN
+	select m.name place1, n.name place2 from sights as m join sights n where m.name < n.name and ST_Distance(ST_GeomFromText(concat("POINT(",m.x,' ',m.y,')')),ST_GeomFromText(concat("POINT(",n.x,' ',n.y,')'))) < 5 order by 1,2;
+END
