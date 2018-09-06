@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE sunnyHolidays()
+BEGIN
+	select holiday_date ski_date from holidays join weather where holiday_date=sunny_date;
+END
