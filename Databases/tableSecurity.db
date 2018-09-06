@@ -1,0 +1,9 @@
+CREATE PROCEDURE tableSecurity()
+BEGIN
+    CREATE OR REPLACE VIEW emp
+    AS select id, name, year(date_joined) date_joined, '-' salary from employees;
+
+    SELECT id, name, date_joined, salary
+    FROM emp
+    ORDER BY id;
+END
