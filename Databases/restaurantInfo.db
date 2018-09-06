@@ -1,0 +1,11 @@
+CREATE PROCEDURE restaurantInfo()
+BEGIN
+    alter table restaurants add column description varchar(255) DEFAULT 'TBD', add column  active int DEFAULT 1;
+    SELECT * FROM restaurants ORDER BY id;
+END
+CREATE PROCEDURE restaurantInfo()
+BEGIN
+    alter table restaurants add description varchar(255) DEFAULT 'TBD';
+    alter table restaurants add  active int DEFAULT 1;
+    SELECT * FROM restaurants ORDER BY id;
+END
