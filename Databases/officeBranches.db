@@ -1,0 +1,10 @@
+CREATE PROCEDURE officeBranches()
+BEGIN
+    ALTER TABLE branches ADD FOREIGN KEY (branchtype_id)
+    references branch_types(id) on delete set null;
+
+    DELETE FROM branch_types WHERE name LIKE '%-outdated';
+
+    SELECT * FROM branches
+    ORDER BY branch_id;
+END
