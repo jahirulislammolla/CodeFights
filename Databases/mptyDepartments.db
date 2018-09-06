@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE emptyDepartments()
+BEGIN
+	select dep_name from departments where not exists(select id from employees where departments.id=department) order by departments.id;
+END
