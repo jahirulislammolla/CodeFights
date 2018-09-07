@@ -7,3 +7,10 @@ BEGIN
     join positions n where not m.id=n.id) t 
     where s.d=t.d and s.id1=t.id1 order by 1;
 END
+
+/*Please add ; after each select statement*/
+CREATE PROCEDURE closestCells()
+BEGIN
+    select m.id id1,(select id from positions n where n.id <> m.id order by st_distance(point(m.x,m.y),point(n.x,n.y)) limit 1) id2 from positions m;
+   
+END
