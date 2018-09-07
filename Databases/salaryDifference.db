@@ -1,0 +1,11 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE salaryDifference()
+BEGIN
+    set @ma=(select max(salary) from employees);
+    set @mi=(select min(salary) from employees);
+	select ifnull(
+            (select sum(salary) from employees where salary=@ma) -
+            (select sum(salary) from employees where salary=@mi),0
+        ) 
+    difference;
+END
