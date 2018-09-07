@@ -1,0 +1,9 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE closestCells()
+BEGIN
+    select s.id1,t.id2 from (select m.id id1, min(st_distance(point(m.x,m.y),point(n.x,n.y))) d 
+    from positions m join positions n where not m.id=n.id group by 1)s 
+    join (select m.id id1, st_distance(point(m.x,m.y),point(n.x,n.y)) d ,n.id id2 from positions m 
+    join positions n where not m.id=n.id) t 
+    where s.d=t.d and s.id1=t.id1 order by 1;
+END
