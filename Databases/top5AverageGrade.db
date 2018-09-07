@@ -1,0 +1,10 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE top5AverageGrade()
+BEGIN
+	select round(Avg(p.grade),2) average_grade from 
+        (
+                select grade from students 
+                order by grade 
+                desc limit 5
+        ) p;
+END
