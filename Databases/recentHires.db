@@ -1,0 +1,13 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE recentHires()
+BEGIN
+select names from (select * from 
+                   (select '1' id, name names from pr_department order by date_joined desc limit 5) as m
+                   union all
+                   select * from 
+                   (select '2' id, name names from it_department order by date_joined desc limit 5) as n
+                   union all select * from 
+                   (select '3' id, name names from sales_department order by date_joined desc limit 5) as o
+                  ) 
+as k order by k.id,k.names;
+end 
