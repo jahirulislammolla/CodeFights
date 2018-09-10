@@ -1,0 +1,6 @@
+CREATE PROCEDURE holidayEvent()
+BEGIN
+    set @a=0;
+/*select distinct buyer_name winners from (select buyer_name, @a:=@a+1 m from purchases) as  p where m%4=0 order by 1;*/
+    select distinct buyer_name winners from purchases where (@a:=@a+1)%4=0 order by 1;
+end 
