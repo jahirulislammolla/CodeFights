@@ -1,0 +1,9 @@
+CREATE PROCEDURE trackingSystem()
+BEGIN
+    select p.anonym_id,r.event_name last_null,if(
+        exists(select * from tracks as tt where tt.anonymous_id=p.anonym_id and tt.user_id is not null)>0,
+        (select event_name from tracks as ee where ee.anonymous_id=p.anonym_id and ee.user_id is not null limit 1)
+        ,null) first_notnull from 
+(select anonymous_id anonym_id, max(received_at) ma from tracks where user_id is null group by 1) as p,
+tracks as r where p.anonym_id=r.anonymous_id and p.ma=r.received_at;
+END
