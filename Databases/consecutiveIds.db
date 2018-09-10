@@ -1,0 +1,9 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE consecutiveIds()
+BEGIN
+/*
+    select id oldId, (select count(*) from itemIds as c where c.id <=d.id) newId from itemIds as d;
+*/
+    set @a=0;
+	select id oldId, @a:= @a+1 newId from itemIds;
+END
