@@ -1,0 +1,21 @@
+/*Please add ; after each select statement
+select * from (select * from (
+            select id, 'name' column_name, name value from workers_info where name is not null
+        ) as kk union all select * from (
+            select id, 'date_of_birth' column_name, date_of_birth value from workers_info where date_of_birth is not null
+        ) as ll union all select * from (
+            select id, 'salary' column_name, salary value from workers_info where salary is not null
+        ) as mm) as zz order by 1,field(zz.column_name,'name','date_of_birth','salary');
+*/
+CREATE PROCEDURE storageOptimization()
+BEGIN
+	select id, column_name, value from (
+        select * from (
+            select id,'1' id2, 'name' column_name, name value from workers_info where name is not null
+        ) as kk union all select * from (
+            select id,'2' id2, 'date_of_birth' column_name, date_of_birth value from workers_info where date_of_birth is not null
+        ) as ll union all select * from (
+            select id,'3' id2, 'salary' column_name, salary value from workers_info where salary is not null
+        ) as mm order by 1,2
+    ) as zz;
+END
