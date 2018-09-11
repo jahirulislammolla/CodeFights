@@ -1,0 +1,9 @@
+DROP PROCEDURE IF EXISTS orderAnalytics;
+CREATE PROCEDURE orderAnalytics()
+BEGIN
+    create or replace view order_analytics as select id, year(order_date) year, quarter(order_date) quarter, type, (quantity*price) total_price from orders;
+
+    SELECT *
+    FROM order_analytics
+    ORDER by id;
+END;
