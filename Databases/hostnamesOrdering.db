@@ -1,0 +1,9 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE hostnamesOrdering()
+BEGIN
+	select id, hostname from (select id,hostname, if(p>-1,SUBSTRING_INDEX(hostname,'.',-1),'') x, 
+  if(p>0,SUBSTRING_INDEX(hostname,'.',-2),'') y, 
+  if(p>1,SUBSTRING_INDEX(hostname,'.',-3),'')  z from (
+  select id, length(hostname)-length(replace(hostname,'.','')
+  ) p, hostname from hostnames) as jj order by 3,4,5) as tt;
+END
