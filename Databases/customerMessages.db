@@ -1,0 +1,21 @@
+DROP FUNCTION IF EXISTS response;
+CREATE FUNCTION response(name VARCHAR(40)) RETURNS VARCHAR(200) DETERMINISTIC
+BEGIN
+    set @m='';
+    set @c=0;
+    set @l=1;
+    while @c <= char_length(name)-char_length(replace(name,' ','')) do
+        set @c = @c+1;
+        set @p = SUBSTRING_INDEX(name,' ',@c);
+        set @k = substring(name,@l,char_length(@p)-@l+1);
+        set @l = char_length(@k)+2;
+        set @m = concat(@m,ucase(left(@k,1)),lcase(substring(@k,2)),' ');
+    end while;
+    return concat('Dear ',trim(@m),'! We received your message and will process it as soon as possible. Thanks for using our service. FooBar On! - FooBarIO team.');
+END;
+
+CREATE PROCEDURE customerMessages()
+BEGIN
+    SELECT id, name, response(name) AS response
+    FROM customers;
+END;
