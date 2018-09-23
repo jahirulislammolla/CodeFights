@@ -1,0 +1,5 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE findTable()
+BEGIN
+	SELECT table_name as tab_name, COLUMN_NAME as col_name, data_type FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='ri_db' and TABLE_NAME REGEXP '^[e].*[s]$' order by 1,2;
+END
