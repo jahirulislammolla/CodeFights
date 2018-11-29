@@ -18,3 +18,4 @@
 16. [reverseOddCount](https://app.codesignal.com/challenge/NZLcmPoRjWAMfCbx2/solutions/eMbY3RNDvy9WqLqyg)
 17. [gradesReport](https://app.codesignal.com/challenge/ECxw2gmfYWtdjLL33/solutions/8TvC9DYzkdPcrCDNz)
 18. [treeClimbing](https://app.codesignal.com/challenge/6mSjYpDwAeiCgBSsr/solutions/L9kFHMxACpAq3bCsw)
+19. [closestStations_api](https://app.codesignal.com/company-challenges/autodesk/EReoR836k4T8eqaxN)
