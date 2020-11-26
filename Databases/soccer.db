@@ -1,0 +1,6 @@
+CREATE PROCEDURE soccerPlayers()
+BEGIN
+	/* Write your SQL here. Terminate each statement with a semicolon. */select group_concat(DISTINCT  players
+        ORDER BY  player_number asc
+        SEPARATOR '; ') players from (select concat(first_name," ",surname," #",player_number) players, player_number from  soccer_team order by player_number) m ;
+END
